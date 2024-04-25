@@ -307,9 +307,9 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 18px; padding-b
 }
 
 #projectImg {
-    width: 90px;
-    aspect-ratio: auto 90 / 90;
-    height: 90px;
+    width: 80px;
+    aspect-ratio: auto 80 / 80;
+    height: 80px;
 	object-fit: cover;
 }
 
