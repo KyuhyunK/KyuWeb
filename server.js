@@ -1,10 +1,12 @@
-const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 4000
+const express = require('express');
+const path = require('path');
+const PORT = process.env.PORT || 4000;
 
-express()
-  .use(express.static(path.join(__dirname)))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/index'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+const app = express();
+
+app.use(express.static(path.join(__dirname))); // Serve static files from root
+
+// If kyu-web.html is your main file and it's in the root directory
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'kyu-web.html')));
+
+app.listen(PORT, () => console.log(`Listening on ${PORT}`));
